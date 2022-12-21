@@ -1,15 +1,14 @@
-import { parseISO } from "date-fns"
+import { parseISO } from 'date-fns';
 
 
-export const convertEventsToDateEvents = ( events = [] ) => {
+export const convertEventsToDateEvents = ( events = []) => {
 
-    return events.map ( event => {
-        
-        event.start = parseISO( event.start );
+    return events.map( event => {
+
         event.end = parseISO( event.end );
+        event.start = parseISO( event.start );
 
         return event;
-
-    } )
+    })
 
 }

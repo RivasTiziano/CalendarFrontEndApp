@@ -21,14 +21,11 @@ export const CalendarPage = () => {
 
     const isMyEvent = ( user.uid === event.user._id ) || ( user.uid === event.user.uid );
 
-    
-
-
     const style = {
-      backgroundColor: isMyEvent ? '#F8FF6E': '757575',
-      borderRadius: '2px',
+      backgroundColor: isMyEvent ? '#347CF7' : '#465660',
+      borderRadius: '0px',
       opacity: 0.8,
-      color: 'black'
+      color: 'white'
     }
 
     return {
@@ -42,7 +39,7 @@ export const CalendarPage = () => {
   }
 
   const onSelect = ( event ) => {
-    //console.log({ click: event });
+    // console.log({ click: event });
     setActiveEvent( event );
   }
 
@@ -50,6 +47,7 @@ export const CalendarPage = () => {
     localStorage.setItem('lastView', event );
     setLastView( event )
   }
+
 
   useEffect(() => {
     startLoadingEvents()
@@ -83,6 +81,7 @@ export const CalendarPage = () => {
       
       <FabAddNew />
       <FabDelete />
+
 
     </>
   )
